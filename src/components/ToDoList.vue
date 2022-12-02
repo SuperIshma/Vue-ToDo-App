@@ -4,6 +4,7 @@
           <li :key="item.id" v-for="item in todoEntries">
               <ToDoItem
                 :todoItem="item"
+                @item-complete-event="(id) => $emit('itemCompleteEvent', id)"
                 @delete-todo-event="$emit('delete-todo-event', item.id)"
                 @edit-todo-event="(data) => $emit('editTodoEvent', data)" />
           </li>   
