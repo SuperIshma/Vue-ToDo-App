@@ -1,7 +1,7 @@
 <template>
     <div :class="{'filter': action==='filter'}">
       <form :class="formClass" @submit.prevent="sendToDo">
-        <input v-if="!isFilter" type="text" class="text__input" v-model="title" name="title" placeholder="Enter the task to do...">
+        <input v-if="!isFilter" type="text" class="text__input text__input-s" v-model="title" name="title" placeholder="Enter the task to do...">
         <input v-if="isFilter" type="text" class="text__filter" v-model="title" name="title" placeholder="Enter the task to find...">
         <button type="submit" :class="buttonClass">{{buttonText}}</button>
       </form>
@@ -80,7 +80,6 @@
     }
     .text__input {
         flex: 1;
-        padding: 1rem;
         font-size: 1rem;
     }
     .text__submit {
@@ -89,5 +88,16 @@
     .text__submit-filter {
         padding: 0.2rem;
         font-size: 0.8rem;
+    }
+    @media screen and (max-width: 599px) {
+        .text__input-s {
+            padding: 0.3rem;
+        }
+    }
+
+    @media screen and (min-width: 600px) {
+        .text__input-s {
+            padding: 1rem;
+        }
     }
 </style>

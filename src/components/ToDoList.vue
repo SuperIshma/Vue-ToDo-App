@@ -28,11 +28,23 @@ export default {
 <style>
 ul li {
     border: 2px solid hsla(0,0%,100%,.35);
-    padding: 12px 24px;
     border-radius: 6px;
-    margin-bottom: 12px
 }
 li {
     list-style-type: none;
+}
+@media screen and (max-width: 599px) {
+    ul li {
+        padding: 3px 6px;
+        margin-bottom: 3px;
+    }
+}
+
+@media screen and (min-width: 600px) {
+    ul li {
+        padding: 12px 24px;
+        border-radius: 6px;
+        margin-bottom: 12px
+    }
 }
 </style>

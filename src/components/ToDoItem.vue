@@ -5,8 +5,8 @@
             <TextButton :action="'edit'" :task="todoItem.title" @update-todo-event="updateToDo" />
         </div>
         <div>
-            <button v-if="canEdit" title="Edit" class="btn edit" @click="editToDo"><i class="fa fa-edit"></i></button>
-            <button v-if="!edit" title="Delete" class="btn delete" @click="$emit('delete-todo-event', todoItem.id)"><i class="fa fa-trash"></i></button>
+            <button v-if="canEdit" title="Edit" class="btn btn-s edit" @click="editToDo"><i class="fa fa-edit"></i></button>
+            <button v-if="!edit" title="Delete" class="btn btn-s delete" @click="$emit('delete-todo-event', todoItem.id)"><i class="fa fa-trash"></i></button>
         </div>
     </div>
 </template>
@@ -54,10 +54,22 @@
     .btn {
         border: none;
         color: white;
-        padding: 12px 16px;
-        font-size: 16px;
         cursor: pointer;
     }
+
+    @media screen and (max-width: 599px) {
+        .btn-s {
+            padding: 3px 4px;
+            font-size: 12px;
+        }
+    }
+    @media screen and (min-width: 600px) {
+        .btn-s {
+            padding: 12px 16px;
+            font-size: 16px;
+        }
+    }
+
     .completed {
         text-decoration: line-through;
     }
@@ -79,4 +91,5 @@
     .todoItem {
         cursor: pointer;
     }
+    
 </style>
